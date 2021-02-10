@@ -43,37 +43,39 @@ const text = {
 
 const InitialTransition = () => {
 	return (
-		<motion.div
-			className="overflow-hidden absolute z-50 flex items-center justify-center w-screen bg-black"
-			initial="initial"
-			animate="animate"
-			variants={blackBox}
-		>
-			<motion.svg variants={textContainer} className="absolute z-50 flex">
-				<pattern
-					id="pattern"
-					patternUnits="userSpaceOnUse"
-					width={750}
-					height={800}
-					className="text-white"
-				>
-					<rect className="w-full h-full fill-current" />
-					<motion.rect
-						variants={text}
-						className="w-full h-full text-gray-600 fill-current"
-					/>
-				</pattern>
-				<text
-					className="text-4xl font-bold"
-					text-anchor="middle"
-					x="50%"
-					y="50%"
-					style={{ fill: "url(#pattern)" }}
-				>
-					lorem ipsum
-				</text>
-			</motion.svg>
-		</motion.div>
+		<>
+			<motion.div
+				className="overflow-hidden fixed bottom-0 z-50 flex items-center justify-center w-screen bg-black"
+				initial="initial"
+				animate="animate"
+				variants={blackBox}
+			>
+				<motion.svg variants={textContainer} className="absolute z-50 flex">
+					<pattern
+						id="pattern"
+						patternUnits="userSpaceOnUse"
+						width={750}
+						height={800}
+						className="text-white"
+					>
+						<rect className="w-full h-full fill-current" />
+						<motion.rect
+							variants={text}
+							className="w-full h-full text-gray-600 fill-current"
+						/>
+					</pattern>
+					<text
+						className="text-4xl font-bold"
+						text-anchor="middle"
+						x="50%"
+						y="50%"
+						style={{ fill: "url(#pattern)" }}
+					>
+						lorem ipsum
+					</text>
+				</motion.svg>
+			</motion.div>
+		</>
 	);
 };
 

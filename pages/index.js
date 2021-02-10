@@ -7,13 +7,15 @@ export default function Home() {
 		<>
 			<Loader />
 
-			<Nav logo="/favicon.ico" name="Lorem Ipsum" />
+			<div className="mx-12">
+				<Nav logo="/favicon.ico" name="Lorem Ipsum" />
 
-			<div className="absolute flex justify-center items-center overflow-x-hidden">
-				<img
-					className="rounded-lg transform scale-90"
-					src="https://picsum.photos/1920/1080"
-				></img>
+				<div className="flex justify-center items-center">
+					<img
+						className="rounded-xl transform scale-95 select-none"
+						src="https://picsum.photos/1500/650"
+					/>
+				</div>
 			</div>
 		</>
 	);
