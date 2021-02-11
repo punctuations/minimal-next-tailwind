@@ -61,7 +61,7 @@ const InitialTransition = () => {
 						<rect className="w-full h-full fill-current" />
 						<motion.rect
 							variants={text}
-							className="w-full h-full text-gray-600 fill-current"
+							className="w-full h-full text-purple-500 fill-current"
 						/>
 					</pattern>
 					<text
