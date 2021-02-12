@@ -66,7 +66,7 @@ const InitialTransition = () => {
 					</pattern>
 					<text
 						className="text-4xl font-bold"
-						text-anchor="middle"
+						textAnchor="middle"
 						x="50%"
 						y="50%"
 						style={{ fill: "url(#pattern)" }}

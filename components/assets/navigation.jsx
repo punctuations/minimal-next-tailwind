@@ -15,7 +15,10 @@ const Nav = ({ name, logo }) => {
 			<div className="flex items-center space-x-4">
 				{Items.map((content, i) => {
 					return (
-						<a className="cursor-pointer font-medium text-gray-400 hover:text-gray-700 transition-colors duration-500">
+						<a
+							key={i}
+							className="cursor-pointer font-medium text-gray-400 hover:text-gray-700 transition-colors duration-500"
+						>
 							{content}
 						</a>
 					);
