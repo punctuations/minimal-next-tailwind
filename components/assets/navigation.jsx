@@ -43,7 +43,7 @@ const Nav = ({ name, logo }) => {
 					</div>
 				</motion.nav>
 			) : (
-				<motion.nav className="transition-all duration-500 flex w-full">
+				<motion.nav className="transition-all duration-500 flex w-full pb-3">
 					<div className="mx-12 flex justify-between w-full space-y-4">
 						<a
 							className="flex items-center select-none cursor-pointer opacity-75 hover:opacity-100 transition-opacity duration-500"
