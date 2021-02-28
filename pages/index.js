@@ -13,11 +13,13 @@ import Copyright from "../components/assets/copyright";
 export default function Home() {
 	return (
 		<>
+			<Head>
+				<title>Next - Minimal - Tailwind</title>
+			</Head>
 			<Loader />
 
+			<Nav logo="/favicon.ico" name="Lorem Ipsum" />
 			<div className="mx-12">
-				<Nav logo="/favicon.ico" name="Lorem Ipsum" />
-
 				<div className="flex flex-col justify-center items-center">
 					<Hero />
 					<LogoClouds />
