@@ -225,7 +225,7 @@ const Product = () => {
 						<div className="relative flex w-full pl-3.5 py-2 pr-12 sm:text-sm border border-gray-300 rounded-md justify-between">
 							<p>{`${addSymbol(currency, "")} ${((5.4 / 100) * amount).toFixed(
 								2
-							)}`}</p>
+							)} ${currency}`}</p>
 							<p className="absolute right-0 pr-4 flex text-gray-400">
 								Total Fees
 							</p>
