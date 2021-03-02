@@ -24,6 +24,7 @@ const Nav = ({ name, logo }) => {
 								return (
 									<a
 										key={i}
+										href={content.toLowerCase()}
 										className="cursor-pointer font-medium hover:text-gray-700 transition-colors duration-500"
 									>
 										{content}
@@ -58,6 +59,7 @@ const Nav = ({ name, logo }) => {
 								return (
 									<a
 										key={i}
+										href={content.toLowerCase()}
 										className="cursor-pointer font-medium text-gray-400 hover:text-gray-700 transition-colors duration-500"
 									>
 										{content}

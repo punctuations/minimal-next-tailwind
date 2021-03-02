@@ -6,7 +6,7 @@ const Features = () => {
 	{
 		for (const i in FeaturesItems.features) {
 			features.push(
-				<section className="p-6 flex flex-row space-x-2" key={i}>
+				<>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
@@ -31,7 +31,7 @@ const Features = () => {
 							{FeaturesItems.features[i].description}
 						</p>
 					</div>
-				</section>
+				</>
 			);
 		}
 	}
@@ -45,8 +45,12 @@ const Features = () => {
 				suspendisse in est ante in nibh.
 			</p>
 			<div className="grid grid-cols-3 gap-4">
-				{features.map((content) => {
-					return <>{content}</>;
+				{features.map((content, i) => {
+					return (
+						<section className="p-6 flex flex-row space-x-2" key={i}>
+							{content}
+						</section>
+					);
 				})}
 			</div>
 		</section>

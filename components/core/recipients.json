@@ -1,0 +1,34 @@
+{
+	"recipients": [
+		{
+			"name": "Tom Cook",
+			"tag": "@tomcook",
+			"image": "https://fakeface.rest/face/view?gender=male&minimum_age=30&maximum_age=80"
+		},
+		{
+			"name": "Wade Cooper",
+			"tag": "@wadecooper",
+			"image": "https://fakeface.rest/face/view?gender=male&minimum_age=30&maximum_age=40"
+		},
+		{
+			"name": "Delcie Macmullen",
+			"tag": "@delciemacmullen",
+			"image": "https://fakeface.rest/face/view?gender=female&minimum_age=25&maximum_age=40"
+		},
+		{
+			"name": "Will Stinger",
+			"tag": "@willstinger",
+			"image": "https://fakeface.rest/face/view?gender=male&minimum_age=25&maximum_age=45"
+		},
+		{
+			"name": "Halley Soderberg",
+			"tag": "@halleysoderberg",
+			"image": "https://fakeface.rest/face/view?gender=female&minimum_age=19&maximum_age=35"
+		},
+		{
+			"name": "Ludwig Ahgren",
+			"tag": "@ludwig",
+			"image": "https://i.scdn.co/image/ab67706c0000bebbc779688b9d3e15872487175c"
+		}
+	]
+}
