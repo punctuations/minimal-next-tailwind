@@ -16,20 +16,14 @@ export default function Products() {
 			<Loader />
 
 			<Nav logo="/favicon.ico" name="Lorem Ipsum" />
-			<div className="mx-12">
+			<div className="mx-12 space-y-8">
 				<div className="flex flex-col justify-center items-center">
-					<br />
 					<Product />
 				</div>
-				<br />
 				<hr />
-				<br />
 				<Cta />
-				<br />
 				<hr />
-				<br />
 				<Footer />
-				<br />
 				<Copyright />
 			</div>
 		</>

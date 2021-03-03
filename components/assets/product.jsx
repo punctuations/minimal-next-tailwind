@@ -71,7 +71,7 @@ const Product = () => {
 	}
 
 	return (
-		<section className="flex flex-col justify-center items-center">
+		<section className="flex flex-col justify-center items-center space-y-8">
 			<header className="flex flex-col items-center justify-center">
 				<h3 className="leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
 					An easy way to manage your team.
@@ -83,7 +83,6 @@ const Product = () => {
 					blanditiis necessitatibus fugit.
 				</p>
 			</header>
-			<br />
 			<section className="grid grid-cols-2 max-w-7xl">
 				<div className="flex flex-col space-y-6">
 					<header>
@@ -179,7 +178,7 @@ const Product = () => {
 						</div>
 					</div>
 				</div>
-				<div className="flex flex-col p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-500">
+				<div className="flex flex-col p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-500 select-none">
 					<h2 className="text-xl font-semibold text-gray-900">Send money</h2>
 					<p className="text-gray-400 text-base max-w-4xl">
 						Select a recipient and the amount you want to send
@@ -341,6 +340,128 @@ const Product = () => {
 									<option value="EUR">EUR</option>
 								</select>
 							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<br />
+			<section className="grid grid-cols-2 max-w-7xl space-x-12">
+				<div className="flex flex-col space-y-10 justify-center">
+					<div className="relative flex items-center p-4 px-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-500 select-none">
+						<img
+							src="https://i.scdn.co/image/ab67706c0000bebbc779688b9d3e15872487175c"
+							className="flex-shrink-0 h-12 w-12 rounded-full"
+						/>
+						<div className="flex flex-col ml-6">
+							<p>Payment to Ludwig Ahgren</p>
+							<p>
+								<span className="font-medium">$25.00</span>{" "}
+								<span className="text-gray-400">USD</span>
+							</p>
+						</div>
+						<div className="absolute flex right-4 items-center bg-green-100 text-green-600 rounded-lg space-x-2 px-3">
+							<div className="w-2 h-2 rounded-full bg-green-500" />
+							<p className="tracking-tight">Success</p>
+						</div>
+					</div>
+					<div className="relative flex items-center p-4 px-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-500 select-none">
+						<img
+							src="https://fakeface.rest/face/view?gender=female&minimum_age=19&maximum_age=35"
+							className="flex-shrink-0 h-12 w-12 rounded-full"
+						/>
+						<div className="flex flex-col ml-6">
+							<p>Payment to Halley Soderberg</p>
+							<p>
+								<span className="font-medium">$32.64</span>{" "}
+								<span className="text-gray-400">CAD</span>
+							</p>
+						</div>
+						<div className="absolute flex right-4 items-center bg-yellow-100 text-yellow-600 rounded-lg space-x-2 px-3">
+							<div className="w-2 h-2 rounded-full bg-yellow-500" />
+							<p className="tracking-tight">Processing</p>
+						</div>
+					</div>
+					<div className="relative flex items-center p-4 px-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-500 select-none">
+						<img
+							src="https://fakeface.rest/face/view?gender=male&minimum_age=30&maximum_age=40"
+							className="flex-shrink-0 h-12 w-12 rounded-full"
+						/>
+						<div className="flex flex-col ml-6">
+							<p>Payment to Wade Cooper</p>
+							<p>
+								<span className="font-medium">€17.92</span>{" "}
+								<span className="text-gray-400">EUR</span>
+							</p>
+						</div>
+						<div className="absolute flex right-4 items-center bg-red-100 text-red-600 rounded-lg space-x-2 px-3">
+							<div className="w-2 h-2 rounded-full bg-red-500" />
+							<p className="tracking-tight">Failed</p>
+						</div>
+					</div>
+				</div>
+				<div className="flex flex-col space-y-6">
+					<header>
+						<h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-800">
+							Always know what's happening.
+						</h2>
+						<p className="text-gray-400 text-base mt-4 max-w-4xl">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
+							perspiciatis sed quia quibusdam accusantium placeat nisi facere
+							natus consequuntur nam.
+						</p>
+					</header>
+
+					<div className="flex flex-row mt-4 space-x-4">
+						<span className="p-3 bg-purple-400 text-white rounded-md h-11">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+								className="h-5 w-5"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth={2}
+									d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
+								/>
+							</svg>
+						</span>
+						<div className="flex flex-col">
+							<p className="font-medium">Mobile notifications</p>
+							<p className="text-gray-400">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Doloremque id atque, odio saepe labore unde quos vel blanditiis,
+								voluptates facilis a.
+							</p>
+						</div>
+					</div>
+					<div className="flex flex-row mt-4 space-x-4">
+						<span className="p-3 bg-purple-400 text-white rounded-md h-11">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+								className="h-5 w-5"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth={2}
+									d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+								/>
+							</svg>
+						</span>
+						<div className="flex flex-col">
+							<p className="font-medium">Reminder emails</p>
+							<p className="text-gray-400">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Incidunt cupiditate eveniet exercitationem mollitia unde
+								voluptas, maiores corrupti obcaecati laboriosam temporibus sunt,
+								modi magnam!
+							</p>
 						</div>
 					</div>
 				</div>
