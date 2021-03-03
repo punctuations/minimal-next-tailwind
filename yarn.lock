@@ -547,6 +547,13 @@ autoprefixer@^10.2.3:
     normalize-range "^0.1.2"
     postcss-value-parser "^4.1.0"
 
+axios@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
+  dependencies:
+    follow-redirects "^1.10.0"
+
 babel-plugin-syntax-jsx@6.18.0:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz#0af32a9a6e13ca7a3fd5069e62d7b0f58d0d8946"
@@ -1225,12 +1232,12 @@ cssnano-simple@1.2.1:
     cssnano-preset-simple "1.2.1"
     postcss "^7.0.32"
 
-current-currency@^1.4.2:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/current-currency/-/current-currency-1.4.2.tgz#9e1e2ab8be69b38f1bf842a5a63f4d2d28d4cc1a"
-  integrity sha512-BwDY3JFe7UAyGTX4HPun9j93pnvRIc/G0NB+1ZZqm6lIbmTU098MRFapBBboUYfPu3wrKBEsob20mEgXWpqIeQ==
+current-currency@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/current-currency/-/current-currency-1.5.0.tgz#0e6ae3777588348a16c6e6f26139c5b22cecf089"
+  integrity sha512-XX/tnrkK4HcpSxVHk6KlCluUbvGUwTOKPwct/ca5YNmvWzBpysiTJaRMivvCBth1GZrRw2Y8pO/92xN3W/+YQg==
   dependencies:
-    node-fetch "^2.6.1"
+    axios "^0.21.1"
     tslib "^2.1.0"
 
 cyclist@^1.0.1:
@@ -1708,6 +1715,11 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
+
+follow-redirects@^1.10.0:
+  version "1.13.3"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.3.tgz#e5598ad50174c1bc4e872301e82ac2cd97f90267"
+  integrity sha512-DUgl6+HDzB0iEptNQEXLx/KhTmDb8tZUHSeLqpnjpknR70H0nC2t9N73BK6fN4hOvJ84pKlIQVQ4k5FFlBedKA==
 
 for-in@^1.0.2:
   version "1.0.2"
@@ -2694,7 +2706,7 @@ node-emoji@^1.8.1:
   dependencies:
     lodash.toarray "^4.4.0"
 
-node-fetch@2.6.1, node-fetch@^2.6.1:
+node-fetch@2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==

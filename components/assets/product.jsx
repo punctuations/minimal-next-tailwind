@@ -8,12 +8,13 @@ const Product = () => {
 	const [select, setSelect] = useState(false);
 	const [selectedRecipient, setRecipient] = useState(0);
 	const [currency, setCurrency] = useState("USD");
-	const [finalCurreny, setFinalCurrency] = useState("CAD");
+	const [finalCurrency, setFinalCurrency] = useState("CAD");
 	const [amount, setAmount] = useState(0.0);
+	const [finalAmount, setFinalAmount] = useState(0.0);
 
-	// const finalAmount = convert("EUR", amount, "AUD").then((res) => {
-	// 	console.log(res);
-	// });
+	convert(currency, amount, finalCurrency)
+		.then((res) => res.amount)
+		.then((data) => setFinalAmount(data));
 
 	const recipient = [];
 
@@ -25,18 +26,18 @@ const Product = () => {
 						<div class="flex items-center">
 							<img
 								src={Recipients.recipients[i].image}
-								class="flex-shrink-0 h-6 w-6 rounded-full"
+								className="flex-shrink-0 h-6 w-6 rounded-full"
 							/>
-							<span class="ml-3 block font-medium truncate">
+							<span className="ml-3 block font-medium truncate">
 								{Recipients.recipients[i].name}{" "}
 								<span className="text-gray-400 font-normal mx-3">
 									{Recipients.recipients[i].tag}
 								</span>
 							</span>
 
-							<span class="absolute inset-y-0 right-0 flex items-center pr-4">
+							<span className="absolute inset-y-0 right-0 flex items-center pr-4">
 								<svg
-									class="h-5 w-5"
+									className="h-5 w-5"
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 20 20"
 									fill="currentColor"
@@ -51,12 +52,12 @@ const Product = () => {
 							</span>
 						</div>
 					) : (
-						<div class="flex items-center">
+						<div className="flex items-center">
 							<img
 								src={Recipients.recipients[i].image}
-								class="flex-shrink-0 h-6 w-6 rounded-full"
+								className="flex-shrink-0 h-6 w-6 rounded-full"
 							/>
-							<span class="ml-3 block font-normal truncate">
+							<span className="ml-3 block font-normal truncate">
 								{Recipients.recipients[i].name}{" "}
 								<span className="text-gray-400 mx-3">
 									{Recipients.recipients[i].tag}
@@ -84,15 +85,99 @@ const Product = () => {
 			</header>
 			<br />
 			<section className="grid grid-cols-2 max-w-7xl">
-				<div className="flex flex-col">
-					<h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-800">
-						Fast and easy payouts.
-					</h2>
-					<p className="text-gray-400 text-base mt-4 max-w-4xl">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
-						perspiciatis sed quia quibusdam accusantium placeat nisi facere
-						natus consequuntur nam.
-					</p>
+				<div className="flex flex-col space-y-6">
+					<header>
+						<h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-800">
+							Fast and easy payouts.
+						</h2>
+						<p className="text-gray-400 text-base mt-4 max-w-4xl">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
+							perspiciatis sed quia quibusdam accusantium placeat nisi facere
+							natus consequuntur nam.
+						</p>
+					</header>
+
+					<div className="flex flex-row mt-4 space-x-4">
+						<span className="p-3 bg-purple-400 text-white rounded-md h-11">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+								className="h-5 w-5"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth={2}
+									d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+								/>
+							</svg>
+						</span>
+						<div className="flex flex-col">
+							<p className="font-medium">Secure payments</p>
+							<p className="text-gray-400">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+								error accusamus autem explicabo vitae ea nihil aliquid quisquam
+								illo soluta?
+							</p>
+						</div>
+					</div>
+					<div className="flex flex-row mt-4 space-x-4">
+						<span className="p-3 bg-purple-400 text-white rounded-md h-11">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="white"
+								className="w-5 h-5"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth={2}
+									d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
+								/>
+							</svg>
+						</span>
+						<div className="flex flex-col">
+							<p className="font-medium">Fast & easy transactions</p>
+							<p className="text-gray-400">
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+								Suscipit harum enim repellendus impedit? Sint optio officia est
+								illum vero sed, adipisci eum inventore dignissimos excepturi,
+								nihil commodi, eveniet explicabo neque!
+							</p>
+						</div>
+					</div>
+					<div className="flex flex-row mt-4 space-x-4">
+						<span className="p-3 bg-purple-400 text-white rounded-md h-11">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+								className="h-5 w-5"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth={2}
+									d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
+								/>
+							</svg>
+						</span>
+						<div className="flex flex-col">
+							<p className="font-medium">Fast & easy transactions</p>
+							<p className="text-gray-400">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Doloremque quis molestiae nulla soluta ipsam impedit quod
+								officia? Atque exercitationem voluptatem voluptatum rerum porro
+								quia delectus? Placeat debitis repellat repudiandae alias hic,
+								assumenda optio similique ad?
+							</p>
+						</div>
+					</div>
 				</div>
 				<div className="flex flex-col p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-500">
 					<h2 className="text-xl font-semibold text-gray-900">Send money</h2>
@@ -236,9 +321,10 @@ const Product = () => {
 							What recipient gets
 						</p>
 						<div className="relative flex w-full pl-3.5 py-2 pr-12 sm:text-sm border border-gray-300 rounded-md">
-							<p className="items-start">{`${addSymbol(finalCurreny, "")} ${
-								6.4 - 5.4
-							}`}</p>
+							<p className="items-start">{`${addSymbol(finalCurrency, "")} ${(
+								finalAmount -
+								(5.4 / 100) * amount
+							).toFixed(2)}`}</p>
 							<div class="absolute inset-y-0 right-0 flex items-center">
 								<select
 									onChange={() =>
