@@ -178,7 +178,7 @@ const Product = () => {
 						</div>
 					</div>
 				</div>
-				<div className="flex flex-col p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-500 select-none">
+				<div className="relative flex flex-col p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-500 select-none">
 					<h2 className="text-xl font-semibold text-gray-900">Send money</h2>
 					<p className="text-gray-400 text-base max-w-4xl">
 						Select a recipient and the amount you want to send
@@ -341,6 +341,15 @@ const Product = () => {
 								</select>
 							</div>
 						</div>
+					</div>
+					<hr className="mt-6" />
+					<div className="flex flex-row-reverse mt-4 space-x-4 space-x-reverse">
+						<button className="focus:outline-none focus:ring-2 focus:ring-indigo-300 bg-gray-900 text-white font-medium rounded-md p-2 px-6">
+							Continue
+						</button>
+						<button className="focus:outline-none focus:ring-2 focus:ring-indigo-300 text-gray-400 font-medium rounded-md p-2 px-6">
+							Cancel
+						</button>
 					</div>
 				</div>
 			</section>
