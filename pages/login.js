@@ -79,7 +79,10 @@ export default function Login() {
 			>
 				<div className="bg-white flex flex-col justify-center items-center w-5/12 h-full select-none">
 					<div className="flex flex-col space-y-6">
-						<img src="/vercel.svg" width={125} height={125} />
+						<a href="/">
+							<img src="/vercel.svg" width={125} height={125} />
+						</a>
+
 						<header className="space-y-2">
 							<h1 className="font-bold text-4xl antialiased text-gray-900">
 								Sign in to your account
