@@ -1,6 +1,20 @@
 import Head from "next/head";
+import { useState, useEffect } from "react";
 
 export default function Login() {
+	const [validEmail, setValidEmailState] = useState(null);
+	const [validPassword, setValidPasswordState] = useState(null);
+
+	const [canSubmit, setSubmitState] = useState(null);
+
+	const [emailPlaceholder, setEmailPlaceholder] = useState(null);
+
+	useEffect(() => {
+		setEmailPlaceholder(
+			placeholders[Math.floor(Math.random() * placeholders.length)]
+		);
+	}, []);
+
 	const placeholders = [
 		"elonmusk@tesla.com",
 		"epicswagmaster@hotmail.com",
@@ -15,11 +29,41 @@ export default function Login() {
 	];
 
 	function validateEmail(email) {
-		if (
-			email.match(
-				/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-			)
-		) {
+		if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+			setValidEmailState(true);
+		} else {
+			setValidEmailState(false);
+		}
+	}
+
+	function validatePassword(password) {
+		if (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password)) {
+			setValidPasswordState(true);
+		} else {
+			setValidPasswordState(false);
+		}
+	}
+
+	function checkSubmit() {
+		if (validateEmail && validatePassword) {
+			setSubmitState(true);
+		} else {
+			setSubmitState(false);
+		}
+	}
+
+	function submissionRequirements() {
+		switch (canSubmit) {
+			case "true":
+				break;
+			case "false":
+				return (
+					<p className="flex justify-center items-center font-medium text-lg text-red-400">
+						Please recheck your input fields.
+					</p>
+				);
+			default:
+				break;
 		}
 	}
 
@@ -103,63 +147,129 @@ export default function Login() {
 						<br />
 						<form className="space-y-2" action="#" method="POST">
 							<input type="hidden" name="remember" value="true" />
-							<div className="focus-within:ring-2 focus-within:ring-indigo-500 focus-within:border-indigo-500 flex flex-row text-gray-400 focus-within:text-gray-600 transition-colors duration-200 rounded-md relative w-full px-3 py-2 border border-gray-300">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width={20}
-									height={20}
-									viewBox="0 0 20 20"
-									fill="currentColor"
-									className="inline-block mr-2"
-								>
-									<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-									<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-								</svg>
-								<input
-									onChange={() =>
-										validateEmail(
-											document.getElementById("email-address").value
-										)
-									}
-									id="email-address"
-									name="email"
-									type="email"
-									autoComplete="email"
-									required
-									className="appearance-none w-full inline-block placeholder-gray-500 text-gray-900 focus:outline-none focus:z-10 sm:text-sm"
-									placeholder={
-										placeholders[
-											Math.floor(Math.random() * placeholders.length)
-										]
-									}
-								/>
-							</div>
-							<div className="focus-within:ring-2 focus-within:ring-indigo-500 focus-within:border-indigo-500 flex flex-row text-gray-400 focus-within:text-gray-600 transition-colors duration-200 rounded-md relative w-full px-3 py-2 border border-gray-300">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width={20}
-									height={20}
-									viewBox="0 0 20 20"
-									fill="currentColor"
-									className="inline-block mr-2"
-								>
-									<path
-										fillRule="evenodd"
-										d="M3.707 2.293a1 1 0 00-1.414 1.414l14 14a1 1 0 001.414-1.414l-1.473-1.473A10.014 10.014 0 0019.542 10C18.268 5.943 14.478 3 10 3a9.958 9.958 0 00-4.512 1.074l-1.78-1.781zm4.261 4.26l1.514 1.515a2.003 2.003 0 012.45 2.45l1.514 1.514a4 4 0 00-5.478-5.478z"
-										clipRule="evenodd"
+							{validEmail ? (
+								<div className="focus-within:ring-2 focus-within:ring-indigo-500 focus-within:border-indigo-500 flex flex-row text-gray-400 focus-within:text-gray-600 transition-colors duration-200 rounded-md relative w-full px-3 py-2 border border-gray-300">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width={20}
+										height={20}
+										viewBox="0 0 20 20"
+										fill="currentColor"
+										className="inline-block mr-2"
+									>
+										<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+										<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+									</svg>
+									<input
+										onChange={() =>
+											validateEmail(
+												document.getElementById("email-address").value
+											)
+										}
+										id="email-address"
+										name="email"
+										type="email"
+										autoComplete="email"
+										required
+										className="appearance-none w-full inline-block placeholder-gray-500 text-gray-900 focus:outline-none focus:z-10 sm:text-sm"
+										placeholder={emailPlaceholder}
 									/>
-									<path d="M12.454 16.697L9.75 13.992a4 4 0 01-3.742-3.741L2.335 6.578A9.98 9.98 0 00.458 10c1.274 4.057 5.065 7 9.542 7 .847 0 1.669-.105 2.454-.303z" />
-								</svg>
-								<input
-									id="password"
-									name="password"
-									type="password"
-									autoComplete="current-password"
-									required
-									className="appearance-none w-full inline-block placeholder-gray-500 text-gray-900 focus:outline-none focus:z-10 sm:text-sm"
-									placeholder="********"
-								/>
-							</div>
+								</div>
+							) : (
+								<div className="focus-within:ring-2 focus-within:ring-red-300 focus-within:border-red-300 flex flex-row text-gray-400 focus-within:text-gray-600 transition-colors duration-200 rounded-md relative w-full px-3 py-2 border border-gray-300">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width={20}
+										height={20}
+										viewBox="0 0 20 20"
+										fill="currentColor"
+										className="inline-block mr-2"
+									>
+										<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+										<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+									</svg>
+									<input
+										onChange={() =>
+											validateEmail(
+												document.getElementById("email-address").value
+											)
+										}
+										id="email-address"
+										name="email"
+										type="email"
+										autoComplete="email"
+										required
+										className="appearance-none w-full inline-block placeholder-gray-500 text-gray-900 focus:outline-none focus:z-10 sm:text-sm"
+										placeholder={emailPlaceholder}
+									/>
+								</div>
+							)}
+
+							{validPassword ? (
+								<div className="focus-within:ring-2 focus-within:ring-indigo-500 focus-within:border-indigo-500 flex flex-row text-gray-400 focus-within:text-gray-600 transition-colors duration-200 rounded-md relative w-full px-3 py-2 border border-gray-300">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width={20}
+										height={20}
+										viewBox="0 0 20 20"
+										fill="currentColor"
+										className="inline-block mr-2"
+									>
+										<path
+											fillRule="evenodd"
+											d="M3.707 2.293a1 1 0 00-1.414 1.414l14 14a1 1 0 001.414-1.414l-1.473-1.473A10.014 10.014 0 0019.542 10C18.268 5.943 14.478 3 10 3a9.958 9.958 0 00-4.512 1.074l-1.78-1.781zm4.261 4.26l1.514 1.515a2.003 2.003 0 012.45 2.45l1.514 1.514a4 4 0 00-5.478-5.478z"
+											clipRule="evenodd"
+										/>
+										<path d="M12.454 16.697L9.75 13.992a4 4 0 01-3.742-3.741L2.335 6.578A9.98 9.98 0 00.458 10c1.274 4.057 5.065 7 9.542 7 .847 0 1.669-.105 2.454-.303z" />
+									</svg>
+									<input
+										onChange={() =>
+											validatePassword(
+												document.getElementById("password").value
+											)
+										}
+										id="password"
+										name="password"
+										type="password"
+										autoComplete="current-password"
+										required
+										className="appearance-none w-full inline-block placeholder-gray-500 text-gray-900 focus:outline-none focus:z-10 sm:text-sm"
+										placeholder="********"
+									/>
+								</div>
+							) : (
+								<div className="focus-within:ring-2 focus-within:ring-red-300 focus-within:border-red-300 flex flex-row text-gray-400 focus-within:text-gray-600 transition-colors duration-200 rounded-md relative w-full px-3 py-2 border border-gray-300">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width={20}
+										height={20}
+										viewBox="0 0 20 20"
+										fill="currentColor"
+										className="inline-block mr-2"
+									>
+										<path
+											fillRule="evenodd"
+											d="M3.707 2.293a1 1 0 00-1.414 1.414l14 14a1 1 0 001.414-1.414l-1.473-1.473A10.014 10.014 0 0019.542 10C18.268 5.943 14.478 3 10 3a9.958 9.958 0 00-4.512 1.074l-1.78-1.781zm4.261 4.26l1.514 1.515a2.003 2.003 0 012.45 2.45l1.514 1.514a4 4 0 00-5.478-5.478z"
+											clipRule="evenodd"
+										/>
+										<path d="M12.454 16.697L9.75 13.992a4 4 0 01-3.742-3.741L2.335 6.578A9.98 9.98 0 00.458 10c1.274 4.057 5.065 7 9.542 7 .847 0 1.669-.105 2.454-.303z" />
+									</svg>
+									<input
+										onChange={() =>
+											validatePassword(
+												document.getElementById("password").value
+											)
+										}
+										id="password"
+										name="password"
+										type="password"
+										autoComplete="current-password"
+										required
+										className="appearance-none w-full inline-block placeholder-gray-500 text-gray-900 focus:outline-none focus:z-10 sm:text-sm"
+										placeholder="********"
+									/>
+								</div>
+							)}
 						</form>
 						<div className="flex items-center justify-between">
 							<div className="flex items-center">
@@ -188,6 +298,7 @@ export default function Login() {
 						</div>
 						<button
 							type="submit"
+							onClick={() => checkSubmit()}
 							className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
 						>
 							<span className="absolute left-0 inset-y-0 flex items-center pl-3">
@@ -206,6 +317,7 @@ export default function Login() {
 							</span>
 							Sign in
 						</button>
+						{submissionRequirements()}
 					</div>
 				</div>
 			</div>
