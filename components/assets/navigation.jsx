@@ -34,10 +34,16 @@ const Nav = ({ name, logo }) => {
 						</div>
 
 						<div className="flex items-center space-x-4">
-							<a className="cursor-pointer font-medium hover:text-gray-700 transition-colors duration-500">
+							<a
+								href="login"
+								className="cursor-pointer font-medium hover:text-gray-700 transition-colors duration-500"
+							>
 								Sign In
 							</a>
-							<a className="transform hover:scale-105 cursor-pointer p-2.5 bg-purple-500 rounded-lg text-white transition-all duration-500">
+							<a
+								href="login"
+								className="transform hover:scale-105 cursor-pointer p-2.5 bg-purple-500 rounded-lg text-white transition-all duration-500"
+							>
 								Sign Up
 							</a>
 						</div>
@@ -69,10 +75,16 @@ const Nav = ({ name, logo }) => {
 						</div>
 
 						<div className="flex items-center space-x-4">
-							<a className="cursor-pointer font-medium text-gray-400 hover:text-gray-700 transition-colors duration-500">
+							<a
+								href="login"
+								className="cursor-pointer font-medium text-gray-400 hover:text-gray-700 transition-colors duration-500"
+							>
 								Sign In
 							</a>
-							<a className="transform hover:scale-105 cursor-pointer p-2.5 bg-purple-500 rounded-lg text-white transition-all duration-500">
+							<a
+								href="login"
+								className="transform hover:scale-105 cursor-pointer p-2.5 bg-purple-500 rounded-lg text-white transition-all duration-500"
+							>
 								Sign Up
 							</a>
 						</div>
