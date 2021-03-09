@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Loader from "../components/assets/loader";
 import Nav from "../components/assets/navigation";
-import Cta from "../components/assets/cta";
 import Footer from "../components/assets/footer";
 import Copyright from "../components/assets/copyright";
 
@@ -20,8 +19,6 @@ export default function Pricing() {
 				<div className="flex flex-col justify-center items-center">
 					<Price />
 				</div>
-				<hr />
-				<Cta />
 				<hr />
 				<Footer />
 				<Copyright />
