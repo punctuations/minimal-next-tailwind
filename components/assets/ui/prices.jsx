@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const Prices = () => {
 	return (
 		<section className="flex flex-row justify-center items-center space-x-5">
-			<section className="flex flex-col flex-1 shadow-xl rounded-lg">
+			<section className="flex flex-col flex-1 shadow-xl hover:shadow-2xl transition-shadows duration-500 rounded-lg">
 				<div className="px-20 pt-6 pb-4 flex flex-col items-center justify-center border-b border-gray-100">
 					<header className="flex flex-col items-center justify-center">
 						<h3 className="text-2xl text-gray-900 font-bold">Hobby</h3>
@@ -78,7 +78,7 @@ const Prices = () => {
 					</button>
 				</div>
 			</section>
-			<section className="relative flex flex-col flex-1 border border-purple-500 rounded-lg shadow-xl">
+			<section className="relative flex flex-col flex-1 border border-purple-500 rounded-lg shadow-xl hover:shadow-2xl transition-shadows duration-500">
 				<p className="absolute -top-5 left-1/4 bg-purple-500 text-white px-12 p-1.5 rounded-md">
 					Featured
 				</p>
@@ -175,7 +175,7 @@ const Prices = () => {
 					</button>
 				</div>
 			</section>
-			<section className="flex flex-col flex-1 shadow-xl rounded-lg">
+			<section className="flex flex-col flex-1 shadow-xl hover:shadow-2xl transition-shadows duration-500 rounded-lg">
 				<div className="px-20 pt-6 pb-4 flex flex-col items-center justify-center border-b border-gray-100">
 					<header className="flex flex-col items-center justify-center">
 						<h3 className="text-2xl text-gray-900 font-bold">Business</h3>
