@@ -82,7 +82,7 @@ const Nav = ({ name, logo }) => {
 								Sign In
 							</a>
 							<a
-								href="login"
+								href="register"
 								className="transform hover:scale-105 cursor-pointer p-2.5 bg-purple-500 rounded-lg text-white transition-all duration-500"
 							>
 								Sign Up
