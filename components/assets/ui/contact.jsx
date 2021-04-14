@@ -208,7 +208,7 @@ const Contact = () => {
               />
             </svg>
           </span>
-                    Sign in
+                    Submit
                 </button>
             </form>
         </section>
